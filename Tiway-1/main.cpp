@@ -12,12 +12,6 @@ void example()
     // or call the flush() method
     Php::out << "example output";
     Php::out.flush();
-
-    // just like all PHP functions, you can call the echo() function 
-    // from C++ code as well
-    Php::echo("Example output\n");
-
-    Php::Value 
     
 }  
 
