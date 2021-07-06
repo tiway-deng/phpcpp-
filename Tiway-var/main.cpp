@@ -5,12 +5,14 @@
 #include<stdlib.h>
 #include <string>
 
+/**
+ *
+ * 通过 char * 指针获取定长随机字符 
+ * */
 Php::Value gen_by_charp(Php::Parameters &params)
 {
     //长度参数
     int len = params[0];
-    //返回值声明
-    Php::Value result;
     //声明返回值长度，并返回指针给str
     char* str = new char[len+1];
     //srand函数是随机数发生器rand的初始化函数,我们常常使用系统时间来初始化;
@@ -34,9 +36,14 @@ Php::Value gen_by_charp(Php::Parameters &params)
     }
     str[len+1] = '\0';
 
+    //str 本是Php::Value 对象
     return str;
 } 
 
+/**
+ *
+ * 通过 char 获取定长随机字符 
+ * */
 Php::Value gen_by_char(Php::Parameters &params)
 {
     int len = params[0];
@@ -65,6 +72,10 @@ Php::Value gen_by_char(Php::Parameters &params)
     return str;
 }  
 
+/**
+ *
+ * 通过 string 获取定长随机字符 
+ * */
 Php::Value gen_by_string(Php::Parameters &params)
 {
     int len = params[0];
